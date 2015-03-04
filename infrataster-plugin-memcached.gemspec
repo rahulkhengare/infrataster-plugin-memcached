@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name = "infrataster-plugin-memcached"
-  spec.version = '0.1.1'
+  spec.version = '0.1.2'
   spec.authors = ["Rahul Khengare"]
   spec.email = ["rahulk1306@gmail.com"]
   spec.summary = %q{memcached plugin for Infrataster}
