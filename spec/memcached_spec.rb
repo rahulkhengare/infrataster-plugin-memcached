@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe server(:serf2) do
+describe server(:memcached) do
   describe memcached("stats") do
     it 'should show stats' do
       # checking version from memcached stats

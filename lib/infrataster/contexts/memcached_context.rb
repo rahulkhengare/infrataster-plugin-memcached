@@ -9,14 +9,18 @@ module Infrataster
         if server.options[:memcached]
           options = options.merge(server.options[:memcached])
         end
-        # query parse 
+
+        # Query  parse 
         query, arguments = resource.query.split(' ', 2) 
+        # For set and get query parse and get arguments
         if query == "set" or query == "get"
           arguments = arguments.scan(/'[^']*'/).map{|n| eval n}  
         end 
-        
+
+        # Initialize the memcached obj
         $cache = Memcached.new("#{options[:host]}:#{options[:port]}")
         if $cache.respond_to?(query)
+          # Run query 
           $cache.method(query).call(*arguments)
         end  
       end

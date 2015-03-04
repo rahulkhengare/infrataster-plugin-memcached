@@ -2,8 +2,8 @@ require 'infrataster/rspec'
 require 'infrataster-plugin-memcached'
 
 Infrataster::Server.define(
-  :serf2,
-  '172.26.126.45',
+  :memcached,
+  '172.26.126.0/32',
   memcached: {host: 'localhost', port: 11211},
 )
 
