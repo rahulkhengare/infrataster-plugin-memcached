@@ -1,4 +1,5 @@
 require 'infrataster'
+require 'memcached'
 
 module Infrataster
   module Resources
@@ -6,10 +7,11 @@ module Infrataster
       Error = Class.new(StandardError)
 
       attr_reader :query
-
-      def initialize(query, options = {})
+      attr_accessor :cache
+       
+      def initialize(query, options={})
         @query = query 
-        @options = options
+        @cache = nil
       end
     
       def to_s

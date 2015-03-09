@@ -18,10 +18,10 @@ module Infrataster
         end 
 
         # Initialize the memcached obj
-        $cache = Memcached.new("#{options[:host]}:#{options[:port]}")
-        if $cache.respond_to?(query)
+        resource.cache = Memcached.new("#{options[:host]}:#{options[:port]}")
+        if resource.cache.respond_to?(query)
           # Run query 
-          $cache.method(query).call(*arguments)
+          resource.cache.method(query).call(*arguments)
         end  
       end
     end
