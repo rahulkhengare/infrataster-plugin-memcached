@@ -7,7 +7,7 @@ Memcached plugin for [Infrataster](https://github.com/rahulkhengare/infrataster-
 
 Add this line to your Gemfile:
 
-    gem 'infrataster-plugin-memecached'
+    gem 'infrataster-plugin-memcached'
 
 And then add the following line to your spec\_helper.rb:
 
